@@ -13,6 +13,7 @@ namespace TESTAPI2
         public MainPage()
         {
             InitializeComponent();
+            // Voici le corrigé ton erreur était à la ligne 45
         }
     }
 }
