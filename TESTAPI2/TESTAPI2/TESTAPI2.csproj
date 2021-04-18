@@ -11,6 +11,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ClasseMetier\**" />
+    <Compile Remove="NewFolder1\**" />
+    <Compile Remove="NewFolder2\**" />
+    <Compile Remove="NewFolder3\**" />
+    <Compile Remove="NewFolder4\**" />
+    <EmbeddedResource Remove="ClasseMetier\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder2\**" />
+    <EmbeddedResource Remove="NewFolder3\**" />
+    <EmbeddedResource Remove="NewFolder4\**" />
+    <None Remove="ClasseMetier\**" />
+    <None Remove="NewFolder1\**" />
+    <None Remove="NewFolder2\**" />
+    <None Remove="NewFolder3\**" />
+    <None Remove="NewFolder4\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="PageSecteur.cs" />
+    <Compile Remove="PageSecteur.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="PageSecteur.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>

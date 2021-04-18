@@ -12,8 +12,12 @@ namespace TESTAPI2
     {
         public MainPage()
         {
-            InitializeComponent();
-            // Voici le corrigé ton erreur était à la ligne 45
+            InitializeComponent();   
+        }
+        private async void btnSecteurs_Clicked(object sender, EventArgs e)
+        {
+            PageSecteur page = new PageSecteur();
+            await Navigation.PushModalAsync(new NavigationPage(page));
         }
     }
 }

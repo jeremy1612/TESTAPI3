@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TESTAPI2
+namespace TestAPIGSB
 {
     public partial class App : Application
     {
