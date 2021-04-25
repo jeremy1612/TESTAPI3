@@ -28,7 +28,7 @@ namespace TestAPIGSB.Pages
             List<Region> lesRegions = new List<Region>();
 
             ws = new HttpClient();
-            var reponse = await ws.GetAsync("http://10.0.2.2/SIO2ALT/APIGSB/regions/");
+            var reponse = await ws.GetAsync("http://10.0.2.2/Bidon/SIO2ALT/SIO2ALT/APIGSB/regions/");
             var content = await reponse.Content.ReadAsStringAsync();
             lesRegions = JsonConvert.DeserializeObject<List<Region>>(content);
             lvRegions.ItemsSource = lesRegions;

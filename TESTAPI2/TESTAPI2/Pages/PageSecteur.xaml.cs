@@ -1,4 +1,5 @@
-﻿using Android.Widget;
+﻿
+using Android.Widget;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -27,7 +28,7 @@ namespace TestAPIGSB.Pages
             List<Secteur> lesSecteurs = new List<Secteur>();
 
             ws = new HttpClient();
-            var reponse = await ws.GetAsync("http://10.0.2.2/SIO2ALT/APIGSB/secteurs/");
+            var reponse = await ws.GetAsync("http://10.0.2.2/Bidon/SIO2ALT/SIO2ALT/APIGSB/secteurs/");
             var content = await reponse.Content.ReadAsStringAsync();
             lesSecteurs = JsonConvert.DeserializeObject<List<Secteur>>(content);
             lvSecteurs.ItemsSource = lesSecteurs;
@@ -53,17 +54,17 @@ namespace TestAPIGSB.Pages
                 Secteur sec = (lvSecteurs.SelectedItem as Secteur);
                 sec.Nom = txtNomSecteur.Text;
                 JObject jsec = new JObject
-{
-{"Id",sec.Id},
-{"Nom",sec.Nom}
-};
+                {
+                {"Id",sec.Id},
+                {"Nom",sec.Nom}
+                };
                 string json = JsonConvert.SerializeObject(jsec);
                 StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-                var reponse = await ws.PutAsync("http://10.0.2.2/SIO2ALT/APIGSB/secteurs/", content);
+                var reponse = await ws.PutAsync("http://10.0.2.2/Bidon/SIO2ALT/SIO2ALT/APIGSB/secteurs/", content);
                 List<Secteur> lesSecteurs = new List<Secteur>();
 
                 ws = new HttpClient();
-                reponse = await ws.GetAsync("http://10.0.2.2/SIO2ALT/APIGSB/secteurs/");
+                reponse = await ws.GetAsync("http://10.0.2.2/Bidon/SIO2ALT/SIO2ALT/APIGSB/secteurs/");
                 var flux = await reponse.Content.ReadAsStringAsync();
                 lesSecteurs = JsonConvert.DeserializeObject<List<Secteur>>(flux);
                 lvSecteurs.ItemsSource = lesSecteurs;
@@ -88,11 +89,11 @@ namespace TestAPIGSB.Pages
                 string json = JsonConvert.SerializeObject(sec);
                 StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var reponse = await ws.PostAsync("http://10.0.2.2/SIO2ALT/APIGSB/secteurs/", content);
+                var reponse = await ws.PostAsync("http://10.0.2.2/Bidon/SIO2ALT/SIO2ALT/APIGSB/secteurs/", content);
                 List<Secteur> lesSecteurs = new List<Secteur>();
 
                 ws = new HttpClient();
-                reponse = await ws.GetAsync("http://10.0.2.2/SIO2ALT/APIGSB/secteurs/");
+                reponse = await ws.GetAsync("http://10.0.2.2/Bidon/SIO2ALT/SIO2ALT/APIGSB/secteurs/");
                 var flux = await reponse.Content.ReadAsStringAsync();
                 lesSecteurs = JsonConvert.DeserializeObject<List<Secteur>>(flux);
                 lvSecteurs.ItemsSource = lesSecteurs;
